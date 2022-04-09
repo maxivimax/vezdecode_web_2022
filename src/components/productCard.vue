@@ -1,6 +1,6 @@
 <template>
   <TransitionRoot as="template" :show="open">
-    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" @close="open = false">
+    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" :open="open" @close="open = false">
       <div class="flex min-h-screen text-center md:block md:px-2 lg:px-4" style="font-size: 0">
         <TransitionChild
           as="template"
@@ -86,11 +86,16 @@ import {
   Dialog,
   DialogOverlay,
   TransitionChild,
-  TransitionRoot,
+  TransitionRoot, 
 } from '@headlessui/vue'
 
+var open = ref(false)
+
 export default {
-  props: ["values"],
+  props: {
+    productName: String,
+    popup: Boolean
+  },
   components: {
     Dialog,
     DialogOverlay,
@@ -100,13 +105,16 @@ export default {
   },
   methods: {
     close() {
-      this.$emit('closeModal');
+      open = ref(false)
+    },
+    show() {
+      this.$forceUpdate();
+      open = ref(true)
     },
   },
-  setup() {
-    const open = ref(true)
+  setup(props) {
     const data = require('../assets/products.json')
-    const product = data["senya"]
+    const product = data[props.productName]
 
     return {
       product,
