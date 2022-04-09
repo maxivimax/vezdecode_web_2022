@@ -1,5 +1,6 @@
 {
   "senya": {
+    "id": "senya",
     "name": "Игрушка Сеня",
     "price": "192",
     "currency": "USD",
@@ -8,6 +9,7 @@
     "imageSrc": "https://sun9-63.userapi.com/impg/00kgZsxcpeyhtKP30lD6XpWcqWaPVu8gjG-y2w/lAOrUWcDFFc.jpg?size=520x0&quality=95&sign=b7c2185ccfc3d7b71909747a4d7a8d95"
   },
   "bottle": {
+    "id": "bottle",
     "name": "Earthen Bottle",
     "href": "#",
     "price": "48",
@@ -16,6 +18,7 @@
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
   },
   "tumbler": {
+    "id": "tumbler",
     "name": "Nomad Tumbler",
     "href": "#",
     "price": "35",
@@ -24,6 +27,7 @@
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
   },
   "paper": {
+    "id": "paper",
     "name": "Focus Paper Refill",
     "href": "#",
     "price": "89",
@@ -32,6 +36,7 @@
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
   },
   "pencil": {
+    "id": "pencil",
     "name": "Machined Mechanical Pencil",
     "href": "#",
     "price": "35",

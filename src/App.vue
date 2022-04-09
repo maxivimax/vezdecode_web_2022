@@ -1,15 +1,10 @@
 <template>
-  <ProductList />
-  <button
-      type="button"
-      class="btn"
-      @click="showModal()"
-    >
-      Open Modal!
-    </button>
+  <ProductList v-on:getPopup="getPopup"/>
   <Product
-    :values="isModalVisible"
-    :product="senya"
+    :popup="isModalVisible"
+    :productName="productName"
+    :key="componentKey"
+    ref="childComponent"
   />
 </template>
 
@@ -25,12 +20,21 @@ export default {
   },
   data() {
     return {
-      isModalVisible: false,
+      isModalVisible: true,
+      productName: "senya",
+      componentKey: 0,
     };
   },
   methods: {
-    showModal() {
+    getPopup(productName) {
+      this.productName = productName;
       this.isModalVisible = true;
+      this.$refs.childComponent.show();
+      this.componentKey += 1;  
+      console.log(productName)
+    },
+    showModal() {
+      this.$refs.childComponent.show();
     },
     closeModal() {
       this.isModalVisible = false;
