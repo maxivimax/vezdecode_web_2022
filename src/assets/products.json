@@ -1,0 +1,42 @@
+{
+  "senya": {
+    "name": "Игрушка Сеня",
+    "price": "192",
+    "currency": "USD",
+    "href": "#",
+    "description": "Это Сеня! Он стоит 110 баллов. Купи? Он же милашка!!!",
+    "imageSrc": "https://sun9-63.userapi.com/impg/00kgZsxcpeyhtKP30lD6XpWcqWaPVu8gjG-y2w/lAOrUWcDFFc.jpg?size=520x0&quality=95&sign=b7c2185ccfc3d7b71909747a4d7a8d95"
+  },
+  "bottle": {
+    "name": "Earthen Bottle",
+    "href": "#",
+    "price": "48",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Earthen Bottle",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+  },
+  "tumbler": {
+    "name": "Nomad Tumbler",
+    "href": "#",
+    "price": "35",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Nomad Tumbler",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+  },
+  "paper": {
+    "name": "Focus Paper Refill",
+    "href": "#",
+    "price": "89",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Focus Paper Refill",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
+  },
+  "pencil": {
+    "name": "Machined Mechanical Pencil",
+    "href": "#",
+    "price": "35",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined Mechanical Pencil",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
+  }
+}
