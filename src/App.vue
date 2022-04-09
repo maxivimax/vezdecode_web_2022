@@ -6,17 +6,20 @@
     :key="componentKey"
     ref="childComponent"
   />
+  <ShopList />
 </template>
 
 <script>
 import Product from './components/productCard'
 import ProductList from './components/productList'
+import ShopList from './components/ShopList'
 
 export default {
   name: 'App',
   components: {
     Product,
-    ProductList
+    ProductList,
+    ShopList
   },
   data() {
     return {
