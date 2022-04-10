@@ -2,46 +2,84 @@
   "senya": {
     "id": "senya",
     "name": "Игрушка Сеня",
-    "price": "192",
-    "currency": "USD",
+    "price": "110",
+    "currency": "баллов",
     "href": "#",
     "description": "Это Сеня! Он стоит 110 баллов. Купи? Он же милашка!!!",
-    "imageSrc": "https://sun9-63.userapi.com/impg/00kgZsxcpeyhtKP30lD6XpWcqWaPVu8gjG-y2w/lAOrUWcDFFc.jpg?size=520x0&quality=95&sign=b7c2185ccfc3d7b71909747a4d7a8d95"
+    "imageSrc": "https://i.ibb.co/vhs0n02/l-AOr-UWc-DFFc.jpg"
   },
-  "bottle": {
-    "id": "bottle",
-    "name": "Earthen Bottle",
+  
+  "AngrySmile": {
+    "id": "AngrySmile",
+    "name": "Angry smile UNO reverse",
     "href": "#",
-    "price": "48",
+    "price": "192",
     "currency": "USD",
-    "description": "Хз что это, но написано что Earthen Bottle",
-    "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/dmsrqSk/angry-Smile.png"
   },
-  "tumbler": {
-    "id": "tumbler",
-    "name": "Nomad Tumbler",
-    "href": "#",
-    "price": "35",
-    "currency": "USD",
-    "description": "Хз что это, но написано что Nomad Tumbler",
-    "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
-  },
-  "paper": {
-    "id": "paper",
-    "name": "Focus Paper Refill",
-    "href": "#",
-    "price": "89",
-    "currency": "USD",
-    "description": "Хз что это, но написано что Focus Paper Refill",
-    "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
-  },
-  "pencil": {
-    "id": "pencil",
-    "name": "Machined Mechanical Pencil",
+  "Dinomaik": {
+    "id": "Dinomaik",
+    "name": "Dinomaik UNO reverse",
     "href": "#",
     "price": "35",
     "currency": "USD",
-    "description": "Хз что это, но написано что Machined Mechanical Pencil",
-    "imageSrc": "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/nspMh2J/dinomaik.png"
+  },
+  "DoraPunk": {
+    "id": "DoraPunk",
+    "name": "Dora (Punk) UNO reverse",
+    "href": "#",
+    "price": "74",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/XVR4897/dorapunk.png"
+  },
+  "DoraRed": {
+    "id": "DoraRed",
+    "name": "Dora (Red) UNO reverse",
+    "href": "#",
+    "price": "65",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/WFSmxht/dorared.png"
+  },
+  "DoraTop": {
+    "id": "DoraTop",
+    "name": "Really Dora UNO reverse",
+    "href": "#",
+    "price": "120",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/DfWGG0f/doraTOP.png"
+  },
+  "Vedmak": {
+    "id": "Vedmak",
+    "name": "Vedmak UNO reverse",
+    "href": "#",
+    "price": "50",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/zJyMKP7/vedmak.png"
+  },
+  "VladXX": {
+    "id": "VladXX",
+    "name": "VladXX UNO reverse",
+    "href": "#",
+    "price": "1000",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/TP2qTpV/vladxx.png"
+  },
+  "Voron": {
+    "id": "Voron",
+    "name": "Voron UNO reverse",
+    "href": "#",
+    "price": "500",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/wB47tGz/voron.png"
   }
+
 }

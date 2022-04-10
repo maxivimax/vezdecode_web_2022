@@ -1,4 +1,8 @@
+/* eslint-disable */
+
 <template>
+  <Header />
+
   <ProductList v-on:getPopup="getPopup"/>
   <Product
     :popup="isModalVisible"
@@ -13,13 +17,15 @@
 import Product from './components/productCard'
 import ProductList from './components/productList'
 import ShopList from './components/ShopList'
+import Header from './components/headerBlock'
 
 export default {
   name: 'App',
   components: {
     Product,
     ProductList,
-    ShopList
+    ShopList,
+    Header,
   },
   data() {
     return {

@@ -46,7 +46,11 @@
                 <div
                   class="aspect-w-2 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden sm:col-span-4 lg:col-span-5"
                 >
-                  <img :src="product.imageSrc" alt="Image)))" class="object-center object-cover" />
+                  <img
+                    :src="product.imageSrc"
+                    alt="Image)))"
+                    class="object-center object-cover"
+                  />
                 </div>
                 <div class="sm:col-span-8 lg:col-span-7">
                   <h2 class="text-2xl font-extrabold text-gray-900 sm:pr-12">{{ product.name }}</h2>
@@ -82,7 +86,7 @@ import {
   Dialog,
   DialogOverlay,
   TransitionChild,
-  TransitionRoot,
+  TransitionRoot, 
 } from '@headlessui/vue'
 
 var open = ref(false)
