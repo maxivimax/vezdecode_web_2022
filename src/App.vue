@@ -1,26 +1,36 @@
+/* eslint-disable */
+
 <template>
-  <ProductList v-on:getPopup="getPopup"/>
+  <Header v-on:getCart="getCart"/>
+
+  <ProductList v-on:getPopup="getPopup" />
   <Product
-    :popup="isModalVisible"
+    :popup="isCardVisible"
     :productName="productName"
     :key="componentKey"
     ref="childComponent"
   />
+  <ShopList :key="componentKey" ref="childComponentCard" />
 </template>
 
 <script>
 import Product from './components/productCard'
 import ProductList from './components/productList'
+import ShopList from './components/shopList'
+import Header from './components/headerBlock'
 
 export default {
   name: 'App',
   components: {
     Product,
-    ProductList
+    ProductList,
+    ShopList,
+    Header,
   },
   data() {
     return {
       isModalVisible: true,
+      isCardVisible: true,
       productName: "senya",
       componentKey: 0,
     };
@@ -29,15 +39,12 @@ export default {
     getPopup(productName) {
       this.productName = productName;
       this.isModalVisible = true;
-      this.$refs.childComponent.show();
-      this.componentKey += 1;  
-      console.log(productName)
+      this.$refs.childComponent.show(productName);
+      this.componentKey +=1;
     },
-    showModal() {
-      this.$refs.childComponent.show();
-    },
-    closeModal() {
-      this.isModalVisible = false;
+    getCart() {
+      this.isCardVisible = true;
+      this.$refs.childComponentCard.resetIsShowing();
     }
   }
 }

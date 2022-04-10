@@ -1,6 +1,5 @@
 <template>
-  <TransitionRoot as="template" :show="open">
-    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" :open="open" @close="open = false">
+  <TransitionRoot as="template" :show="open">    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" :open="open" @close="open = false">
       <div class="flex min-h-screen text-center md:block md:px-2 lg:px-4" style="font-size: 0">
         <TransitionChild
           as="template"
@@ -17,6 +16,7 @@
         </TransitionChild>
 
         <span class="hidden md:inline-block md:align-middle md:h-screen" aria-hidden="true">&#8203;</span>
+         <ProductEdit :popup="isCardVisible" :productName="productName" ref="childComponent" />
         <TransitionChild
           as="template"
           enter="ease-out duration-300"
@@ -34,6 +34,13 @@
             >
               <button
                 type="button"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-24"
+                @click="open = false"
+              >
+                <PencilIcon class="h-6 w-6" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
                 class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
                 @click="open = false"
               >
@@ -46,11 +53,7 @@
                 <div
                   class="aspect-w-2 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden sm:col-span-4 lg:col-span-5"
                 >
-                  <img
-                    :src="product.imageSrc"
-                    alt="Image)))"
-                    class="object-center object-cover"
-                  />
+                  <img :src="product.imageSrc" alt="Image)))" class="object-center object-cover" />
                 </div>
                 <div class="sm:col-span-8 lg:col-span-7">
                   <h2 class="text-2xl font-extrabold text-gray-900 sm:pr-12">{{ product.name }}</h2>
@@ -62,12 +65,10 @@
                   </section>
 
                   <section aria-labelledby="options-heading" class="mt-10">
-                    <form>
-                      <button
-                        @click="close()"
-                        class="mt-6 w-full bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
-                      >Добавить в корзину</button>
-                    </form>
+                    <button
+                      @click="addToCart(product)"
+                      class="mt-6 w-full bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+                    >Добавить в корзину</button>
                   </section>
                 </div>
               </div>
@@ -81,15 +82,16 @@
 
 <script>
 import { ref } from 'vue'
-import { XIcon } from '@heroicons/vue/outline'
+import { XIcon, PencilIcon } from '@heroicons/vue/outline'
+import ProductEdit from './productEdit'
 import {
   Dialog,
   DialogOverlay,
   TransitionChild,
-  TransitionRoot, 
+  TransitionRoot,
 } from '@headlessui/vue'
 
-var open = ref(false)
+const open = ref(false)
 
 export default {
   props: {
@@ -101,20 +103,29 @@ export default {
     DialogOverlay,
     TransitionChild,
     TransitionRoot,
+    ProductEdit,
     XIcon,
+    PencilIcon,
   },
   methods: {
     close() {
-      open = ref(false)
+      open.value = false
     },
     show() {
-      this.$forceUpdate();
-      open = ref(true)
+      open.value = false
+
+      setTimeout(() => {
+        open.value = true
+      }, 100)
     },
+    addToCart(item) {
+      this.$store.commit("addToCart", item)
+    }
   },
   setup(props) {
     const data = require('../assets/products.json')
-    const product = data[props.productName]
+    var product = data[props.productName]
+    console.log(props.productName)
 
     return {
       product,
