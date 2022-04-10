@@ -91,14 +91,8 @@
                   <div class="mt-6">
                     <a
                       href="#"
-                      v-if="this.$store.state.cartCount>0"
-                      class="flex items-center justify-center rounded-md border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+                      class="flex items-center justify-center rounded-md border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700"
                     >К оплате</a>
-                    <span
-                      v-if="this.$store.state.cartCount==0"
-                      style="cursor: default;"
-                      class="flex items-center justify-center rounded-md border border-transparent bg-gray-400 px-6 py-3 text-base font-medium text-white shadow-sm"
-                    >Корзина пуста</span>
                   </div>
                   <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                     <p>
@@ -156,7 +150,10 @@ export default {
     }
   },
   setup() {
+    const products = "fds"  
+
     return {
+      products,
       open,
     }
   },

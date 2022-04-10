@@ -40,15 +40,13 @@ const store = createStore({
     removeFromCart(state, item) {
       let index = state.cart.indexOf(item);
 
-      let product = state.cart[index];
-      state.cartCount -= 1;
-      product.quantity -= 1;
+      if (index > -1) {
+        let product = state.cart[index];
+        state.cartCount -= product.quantity;
 
-      if (item.quantity == 0) {
-        console.log("dsa")
         state.cart.splice(index, 1);
+        this.commit('saveCart');
       }
-      this.commit('saveCart');
     },
     saveCart(state) {
       window.localStorage.setItem('cart', JSON.stringify(state.cart));

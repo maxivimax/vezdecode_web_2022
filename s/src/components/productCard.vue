@@ -1,5 +1,6 @@
 <template>
-  <TransitionRoot as="template" :show="open">    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" :open="open" @close="open = false">
+  <TransitionRoot as="template" :show="open">
+    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" :open="open" @close="open = false">
       <div class="flex min-h-screen text-center md:block md:px-2 lg:px-4" style="font-size: 0">
         <TransitionChild
           as="template"
@@ -16,7 +17,7 @@
         </TransitionChild>
 
         <span class="hidden md:inline-block md:align-middle md:h-screen" aria-hidden="true">&#8203;</span>
-         <ProductEdit :popup="isCardVisible" :productName="productName" ref="childComponent" />
+        <ProductEdit :popup="isCardVisible" :productName="productName" ref="childComponent" />
         <TransitionChild
           as="template"
           enter="ease-out duration-300"
@@ -124,8 +125,7 @@ export default {
   },
   setup(props) {
     const data = require('../assets/products.json')
-    var product = data[props.productName]
-    console.log(props.productName)
+    const product = data[props.productName]
 
     return {
       product,

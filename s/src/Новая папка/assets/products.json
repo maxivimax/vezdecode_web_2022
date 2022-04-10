@@ -1,0 +1,85 @@
+{
+  "senya": {
+    "id": "senya",
+    "name": "Игрушка Сеня",
+    "price": "110",
+    "currency": "USD",
+    "href": "#",
+    "description": "Это Сеня! Он стоит 110 баллов. Купи? Он же милашка!!!",
+    "imageSrc": "https://i.ibb.co/vhs0n02/l-AOr-UWc-DFFc.jpg"
+  },
+  
+  "AngrySmile": {
+    "id": "AngrySmile",
+    "name": "Angry smile UNO reverse",
+    "href": "#",
+    "price": "192",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/dmsrqSk/angry-Smile.png"
+  },
+  "Dinomaik": {
+    "id": "Dinomaik",
+    "name": "Dinomaik UNO reverse",
+    "href": "#",
+    "price": "35",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/nspMh2J/dinomaik.png"
+  },
+  "DoraPunk": {
+    "id": "DoraPunk",
+    "name": "Dora (Punk) UNO reverse",
+    "href": "#",
+    "price": "74",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/XVR4897/dorapunk.png"
+  },
+  "DoraRed": {
+    "id": "DoraRed",
+    "name": "Dora (Red) UNO reverse",
+    "href": "#",
+    "price": "65",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/WFSmxht/dorared.png"
+  },
+  "DoraTop": {
+    "id": "DoraTop",
+    "name": "Really Dora UNO reverse",
+    "href": "#",
+    "price": "120",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/DfWGG0f/doraTOP.png"
+  },
+  "Vedmak": {
+    "id": "Vedmak",
+    "name": "Vedmak UNO reverse",
+    "href": "#",
+    "price": "50",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/zJyMKP7/vedmak.png"
+  },
+  "VladXX": {
+    "id": "VladXX",
+    "name": "VladXX UNO reverse",
+    "href": "#",
+    "price": "1000",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/TP2qTpV/vladxx.png"
+  },
+  "Voron": {
+    "id": "Voron",
+    "name": "Voron UNO reverse",
+    "href": "#",
+    "price": "500",
+    "currency": "USD",
+    "description": "Хз что это, но написано что Machined UNO reverse",
+    "imageSrc": "https://i.ibb.co/wB47tGz/voron.png"
+  }
+
+}

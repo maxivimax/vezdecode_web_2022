@@ -13,12 +13,14 @@ import './index.css'
 
 let cart = window.localStorage.getItem('cart');
 let cartCount = window.localStorage.getItem('cartCount');
+let productss = require('./assets/products.json');
 
 const store = createStore({
   state() {
     return {
       cart: cart ? JSON.parse(cart) : [],
       cartCount: cartCount ? parseInt(cartCount) : 0,
+      products: productss,
     }
   },
   mutations: {
@@ -40,15 +42,26 @@ const store = createStore({
     removeFromCart(state, item) {
       let index = state.cart.indexOf(item);
 
-      let product = state.cart[index];
-      state.cartCount -= 1;
-      product.quantity -= 1;
+      if (index > -1) {
+        let product = state.cart[index];
+        state.cartCount -= product.quantity;
 
-      if (item.quantity == 0) {
-        console.log("dsa")
         state.cart.splice(index, 1);
+        this.commit('saveCart');
       }
-      this.commit('saveCart');
+    },
+    removeOneFromCart(state, item) {
+      let index = state.cart.indexOf(item);
+      let product = state.cart[index];
+      if (index > -1) {
+        state.cartCount -= 1;
+
+        product.quantity -= 1;
+        this.commit('saveCart');
+      } if (product.quantity == 0){
+        state.cart.splice(index, 1);
+        this.commit('saveCart');
+      }
     },
     saveCart(state) {
       window.localStorage.setItem('cart', JSON.stringify(state.cart));
