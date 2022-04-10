@@ -35,10 +35,10 @@
             >
               <button
                 type="button"
-                class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-24"
                 @click="open = false"
               >
-                <Pencil class="h-6 w-6" aria-hidden="true" />
+                <PencilIcon class="h-6 w-6" aria-hidden="true" />
               </button>
               <button
                 type="button"
@@ -83,7 +83,7 @@
 
 <script>
 import { ref } from 'vue'
-import { XIcon, Pencil } from '@heroicons/vue/outline'
+import { XIcon, PencilIcon } from '@heroicons/vue/outline'
 import ProductEdit from './productEdit'
 import {
   Dialog,
@@ -106,7 +106,7 @@ export default {
     TransitionRoot,
     ProductEdit,
     XIcon,
-    Pencil,
+    PencilIcon,
   },
   methods: {
     close() {
