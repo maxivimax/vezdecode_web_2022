@@ -46,11 +46,7 @@
                 <div
                   class="aspect-w-2 aspect-h-3 rounded-lg bg-gray-100 overflow-hidden sm:col-span-4 lg:col-span-5"
                 >
-                  <img
-                    :src="product.imageSrc"
-                    alt="Image)))"
-                    class="object-center object-cover"
-                  />
+                  <img :src="product.imageSrc" alt="Image)))" class="object-center object-cover" />
                 </div>
                 <div class="sm:col-span-8 lg:col-span-7">
                   <h2 class="text-2xl font-extrabold text-gray-900 sm:pr-12">{{ product.name }}</h2>
@@ -62,12 +58,10 @@
                   </section>
 
                   <section aria-labelledby="options-heading" class="mt-10">
-                    <form>
-                      <button
-                        @click="close()"
-                        class="mt-6 w-full bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
-                      >Добавить в корзину</button>
-                    </form>
+                    <button
+                      @click="addToCart(product)"
+                      class="mt-6 w-full bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+                    >Добавить в корзину</button>
                   </section>
                 </div>
               </div>
@@ -86,7 +80,7 @@ import {
   Dialog,
   DialogOverlay,
   TransitionChild,
-  TransitionRoot, 
+  TransitionRoot,
 } from '@headlessui/vue'
 
 var open = ref(false)
@@ -111,6 +105,9 @@ export default {
       this.$forceUpdate();
       open = ref(true)
     },
+    addToCart(item) {
+        this.$store.commit('addToCart', item);
+    }
   },
   setup(props) {
     const data = require('../assets/products.json')
