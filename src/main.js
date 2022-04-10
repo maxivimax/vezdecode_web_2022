@@ -13,12 +13,16 @@ import './index.css'
 
 let cart = window.localStorage.getItem('cart');
 let cartCount = window.localStorage.getItem('cartCount');
+let maxPrices = window.localStorage.getItem('maxPrices');
+
+console.log(maxPrices)
 
 const store = createStore({
   state() {
     return {
       cart: cart ? JSON.parse(cart) : [],
       cartCount: cartCount ? parseInt(cartCount) : 0,
+      maxPrices: maxPrices ? maxPrices : [],
     }
   },
   mutations: {
@@ -53,6 +57,17 @@ const store = createStore({
     saveCart(state) {
       window.localStorage.setItem('cart', JSON.stringify(state.cart));
       window.localStorage.setItem('cartCount', state.cartCount);
+      window.localStorage.setItem('maxPrices', state.maxPrices);
+    },
+    toAuction(state, item) {
+      let found = state.maxPrices.find(product => product.id == item["id"]);
+
+      if (found) {
+        found.price = item.price;
+      } else {
+        state.maxPrices.push(item);
+      }
+      this.commit('saveCart');
     }
   }
 })

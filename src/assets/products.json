@@ -6,7 +6,8 @@
     "currency": "USD",
     "href": "#",
     "description": "Это Сеня! Он стоит 110 баллов. Купи? Он же милашка!!!",
-    "imageSrc": "https://i.ibb.co/vhs0n02/l-AOr-UWc-DFFc.jpg"
+    "imageSrc": "https://i.ibb.co/vhs0n02/l-AOr-UWc-DFFc.jpg",
+    "auction": false
   },
   
   "AngrySmile": {
@@ -16,7 +17,8 @@
     "price": "192",
     "currency": "USD",
     "description": "Хз что это, но написано что Machined UNO reverse",
-    "imageSrc": "https://i.ibb.co/dmsrqSk/angry-Smile.png"
+    "imageSrc": "https://i.ibb.co/dmsrqSk/angry-Smile.png",
+    "auction": false
   },
   "Dinomaik": {
     "id": "Dinomaik",
@@ -25,7 +27,8 @@
     "price": "35",
     "currency": "USD",
     "description": "Хз что это, но написано что Machined UNO reverse",
-    "imageSrc": "https://i.ibb.co/nspMh2J/dinomaik.png"
+    "imageSrc": "https://i.ibb.co/nspMh2J/dinomaik.png",
+    "auction": false
   },
   "DoraPunk": {
     "id": "DoraPunk",
@@ -34,7 +37,8 @@
     "price": "74",
     "currency": "USD",
     "description": "Хз что это, но написано что Machined UNO reverse",
-    "imageSrc": "https://i.ibb.co/XVR4897/dorapunk.png"
+    "imageSrc": "https://i.ibb.co/XVR4897/dorapunk.png",
+    "auction": false
   },
   "DoraRed": {
     "id": "DoraRed",
@@ -43,7 +47,8 @@
     "price": "65",
     "currency": "USD",
     "description": "Хз что это, но написано что Machined UNO reverse",
-    "imageSrc": "https://i.ibb.co/WFSmxht/dorared.png"
+    "imageSrc": "https://i.ibb.co/WFSmxht/dorared.png",
+    "auction": false
   },
   "DoraTop": {
     "id": "DoraTop",
@@ -52,7 +57,8 @@
     "price": "120",
     "currency": "USD",
     "description": "Хз что это, но написано что Machined UNO reverse",
-    "imageSrc": "https://i.ibb.co/DfWGG0f/doraTOP.png"
+    "imageSrc": "https://i.ibb.co/DfWGG0f/doraTOP.png",
+    "auction": false
   },
   "Vedmak": {
     "id": "Vedmak",
@@ -61,7 +67,8 @@
     "price": "50",
     "currency": "USD",
     "description": "Хз что это, но написано что Machined UNO reverse",
-    "imageSrc": "https://i.ibb.co/zJyMKP7/vedmak.png"
+    "imageSrc": "https://i.ibb.co/zJyMKP7/vedmak.png",
+    "auction": false
   },
   "VladXX": {
     "id": "VladXX",
@@ -70,7 +77,8 @@
     "price": "1000",
     "currency": "USD",
     "description": "Хз что это, но написано что Machined UNO reverse",
-    "imageSrc": "https://i.ibb.co/TP2qTpV/vladxx.png"
+    "imageSrc": "https://i.ibb.co/TP2qTpV/vladxx.png",
+    "auction": true
   },
   "Voron": {
     "id": "Voron",
@@ -79,7 +87,8 @@
     "price": "500",
     "currency": "USD",
     "description": "Хз что это, но написано что Machined UNO reverse",
-    "imageSrc": "https://i.ibb.co/wB47tGz/voron.png"
+    "imageSrc": "https://i.ibb.co/wB47tGz/voron.png",
+    "auction": false
   }
 
 }

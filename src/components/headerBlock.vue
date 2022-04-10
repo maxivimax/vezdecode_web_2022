@@ -24,9 +24,9 @@
               <button
                 @click="$emit('getCart')"
                 type="button"
-                class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                class="bg-gray-800 flex p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
               >
-                <ShoppingBagIcon class="h-6 w-6" aria-hidden="true" />
+                <span class="mr-2 ml-2">{{ this.$store.state.cartCount }}</span> <ShoppingBagIcon class="h-6 w-6 mr-2" aria-hidden="true" />
               </button>
               <Menu as="div" class="ml-3 relative">
                 <div>
@@ -41,6 +41,7 @@
           </div>
 
           <div class="-mr-2 flex md:hidden">
+            {{ this.$store.state.cartCount }}
             <ShoppingBagIcon class="m-5 h-6 w-6" @click="$emit('getCart')" aria-hidden="true" />
 
             <DisclosureButton

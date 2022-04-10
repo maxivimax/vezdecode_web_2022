@@ -1,5 +1,6 @@
 <template>
-  <TransitionRoot as="template" :show="open">    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" :open="open" @close="open = false">
+  <TransitionRoot as="template" :show="open">
+    <Dialog as="div" class="fixed z-10 inset-0 overflow-y-auto" :open="open" @close="open = false">
       <div class="flex min-h-screen text-center md:block md:px-2 lg:px-4" style="font-size: 0">
         <TransitionChild
           as="template"
@@ -16,7 +17,7 @@
         </TransitionChild>
 
         <span class="hidden md:inline-block md:align-middle md:h-screen" aria-hidden="true">&#8203;</span>
-         <ProductEdit :popup="isCardVisible" :productName="productName" ref="childComponent" />
+        <ProductEdit :popup="isCardVisible" :productName="productName" ref="childComponent" />
         <TransitionChild
           as="template"
           enter="ease-out duration-300"
@@ -59,16 +60,40 @@
                   <h2 class="text-2xl font-extrabold text-gray-900 sm:pr-12">{{ product.name }}</h2>
 
                   <section aria-labelledby="information-heading" class="mt-2">
-                    <p class="text-2xl text-gray-900">{{ product.price }} {{ product.currency }}</p>
+                    <p
+                      v-if="!product.auction"
+                      class="text-2xl text-gray-900"
+                    >{{ product.price }} {{ product.currency }}</p>
+                    <p v-if="product.auction" class="text-2xl text-gray-900">
+                      Последняя ставка:
+                      {{
+                        this.$store.state.maxPrices.find(pro => pro.id == product.id) != undefined ? this.$store.state.maxPrices.find(pro => pro.id == product.id)["price"] : 0
+                      }} {{ product.currency }}
+                    </p>
                     <br />
                     <p class="text-lg text-gray-900">{{ product.description }}</p>
                   </section>
 
                   <section aria-labelledby="options-heading" class="mt-10">
+                    <form v-if="product.auction">
+                      <input type="number" v-model="priceUser" placeholder="Ваша ставка?" /> {{ product.currency }}
+                    </form>
                     <button
                       @click="addToCart(product)"
+                      v-if="!product.auction"
                       class="mt-6 w-full bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
-                    >Добавить в корзину</button>
+                    >
+                      Добавить
+                      в корзину
+                    </button>
+                    <button
+                      @click="toAuction(product, priceUser)"
+                      v-if="product.auction"
+                      class="mt-6 w-full bg-pink-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+                    >
+                      Сделать
+                      ставку
+                    </button>
                   </section>
                 </div>
               </div>
@@ -120,6 +145,15 @@ export default {
     },
     addToCart(item) {
       this.$store.commit("addToCart", item)
+    },
+    toAuction(item, price) {
+      this.$store.commit("toAuction", { "id": item.id, "price": 0 })
+      if (this.$store.state.maxPrices.find(pro => pro.id == item.id)["price"] > price) {
+        alert("Минимальная цена: " + this.$store.state.maxPrices.find(pro => pro.id == item.id)["price"])
+      } else {
+        alert("Новая ставка: " + price)
+        this.$store.commit("toAuction", { "id": item.id, "price": price })
+      }
     }
   },
   setup(props) {
