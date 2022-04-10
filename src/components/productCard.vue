@@ -17,6 +17,7 @@
         </TransitionChild>
 
         <span class="hidden md:inline-block md:align-middle md:h-screen" aria-hidden="true">&#8203;</span>
+        <ProductEdit :popup="isCardVisible" :productName="productName" ref="childComponent" />
         <TransitionChild
           as="template"
           enter="ease-out duration-300"
@@ -32,6 +33,13 @@
             <div
               class="w-full relative flex items-center bg-white px-4 pt-14 pb-8 overflow-hidden shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8 rounded-3xl"
             >
+              <button
+                type="button"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
+                @click="open = false"
+              >
+                <Pencil class="h-6 w-6" aria-hidden="true" />
+              </button>
               <button
                 type="button"
                 class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
@@ -75,7 +83,8 @@
 
 <script>
 import { ref } from 'vue'
-import { XIcon } from '@heroicons/vue/outline'
+import { XIcon, Pencil } from '@heroicons/vue/outline'
+import ProductEdit from './productEdit'
 import {
   Dialog,
   DialogOverlay,
@@ -95,7 +104,9 @@ export default {
     DialogOverlay,
     TransitionChild,
     TransitionRoot,
+    ProductEdit,
     XIcon,
+    Pencil,
   },
   methods: {
     close() {
@@ -106,10 +117,10 @@ export default {
 
       setTimeout(() => {
         open.value = true
-      }, 0)
+      }, 100)
     },
     addToCart(item) {
-        this.$store.commit("addToCart", item)
+      this.$store.commit("addToCart", item)
     }
   },
   setup(props) {

@@ -7,7 +7,6 @@
   <Product
     :popup="isCardVisible"
     :productName="productName"
-    :key="componentKey"
     ref="childComponent"
   />
   <ShopList :key="componentKey" ref="childComponentCard" />
@@ -40,7 +39,6 @@ export default {
       this.productName = productName;
       this.isModalVisible = true;
       this.$refs.childComponent.show();
-      this.componentKey += 1;
     },
     getCart() {
       this.isCardVisible = true;
