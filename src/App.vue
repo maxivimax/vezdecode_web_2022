@@ -7,6 +7,7 @@
   <Product
     :popup="isCardVisible"
     :productName="productName"
+    :key="componentKey"
     ref="childComponent"
   />
   <ShopList :key="componentKey" ref="childComponentCard" />
@@ -15,7 +16,7 @@
 <script>
 import Product from './components/productCard'
 import ProductList from './components/productList'
-import ShopList from './components/ShopList'
+import ShopList from './components/shopList'
 import Header from './components/headerBlock'
 
 export default {
@@ -38,7 +39,8 @@ export default {
     getPopup(productName) {
       this.productName = productName;
       this.isModalVisible = true;
-      this.$refs.childComponent.show();
+      this.$refs.childComponent.show(productName);
+      this.componentKey +=1;
     },
     getCart() {
       this.isCardVisible = true;
