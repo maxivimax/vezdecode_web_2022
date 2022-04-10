@@ -83,7 +83,7 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 
-var open = ref(false)
+const open = ref(false)
 
 export default {
   props: {
@@ -99,14 +99,17 @@ export default {
   },
   methods: {
     close() {
-      open = ref(false)
+      open.value = false
     },
     show() {
-      this.$forceUpdate();
-      open = ref(true)
+      open.value = false
+
+      setTimeout(() => {
+        open.value = true
+      }, 0)
     },
     addToCart(item) {
-        this.$store.commit('addToCart', item);
+        this.$store.commit("addToCart", item)
     }
   },
   setup(props) {

@@ -1,16 +1,16 @@
 /* eslint-disable */
 
 <template>
-  <Header />
+  <Header v-on:getCart="getCart"/>
 
-  <ProductList v-on:getPopup="getPopup"/>
+  <ProductList v-on:getPopup="getPopup" />
   <Product
-    :popup="isModalVisible"
+    :popup="isCardVisible"
     :productName="productName"
     :key="componentKey"
     ref="childComponent"
   />
-  <ShopList />
+  <ShopList :key="componentKey" ref="childComponentCard" />
 </template>
 
 <script>
@@ -30,6 +30,7 @@ export default {
   data() {
     return {
       isModalVisible: true,
+      isCardVisible: true,
       productName: "senya",
       componentKey: 0,
     };
@@ -39,14 +40,11 @@ export default {
       this.productName = productName;
       this.isModalVisible = true;
       this.$refs.childComponent.show();
-      this.componentKey += 1;  
-      console.log(productName)
+      this.componentKey += 1;
     },
-    showModal() {
-      this.$refs.childComponent.show();
-    },
-    closeModal() {
-      this.isModalVisible = false;
+    getCart() {
+      this.isCardVisible = true;
+      this.$refs.childComponentCard.resetIsShowing();
     }
   }
 }
