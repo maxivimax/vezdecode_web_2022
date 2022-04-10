@@ -61,7 +61,7 @@
                                 <h3>
                                   <a :href="product.href">{{ product.name }}</a>
                                 </h3>
-                                <p class="ml-4">{{ product.price }} USD</p>
+                                <p class="ml-4">{{ product.price*product.quantity }} USD</p>
                               </div>
                               <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
                             </div>
@@ -71,7 +71,7 @@
                               <div class="flex">
                                 <button
                                   type="button"
-                                  @click="delFromCart(product)"
+                                  @click="delOneFromCart(product)"
                                   class="font-medium text-indigo-600 hover:text-indigo-500"
                                 >Удалить</button>
                               </div>
@@ -91,7 +91,7 @@
                   <div class="mt-6">
                     <a
                       href="#"
-                      class="flex items-center justify-center rounded-md border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700"
+                      class="flex items-center justify-center rounded-md border border-transparent bg-pink-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
                     >К оплате</a>
                   </div>
                   <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
@@ -147,6 +147,9 @@ export default {
     },
     delFromCart(item) {
         this.$store.commit("removeFromCart", item)
+    },
+    delOneFromCart(item) {
+        this.$store.commit("removeOneFromCart", item)
     }
   },
   setup() {
