@@ -61,7 +61,7 @@
                                 <h3>
                                   <a :href="product.href">{{ product.name }}</a>
                                 </h3>
-                                <p class="ml-4">{{ product.price }} USD</p>
+                                <p class="ml-4">{{ product.price*product.quantity }} USD</p>
                               </div>
                               <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
                             </div>
